@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+
+   <HBox>
+      <VBox spacing="5">
+         <children>
+
+            <Label text="Current drugs:" />
+
+            <TableView fx:id="tblDrug" editable="true">
+               <columns>
+                  <TableColumn fx:id="colIdDrug" text="Id">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idEntity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colName" text="Drug Name">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colProducer" text="Producer">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="producer" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colPrice" text="Price">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colNeedsPrescription" text="Needs Prescription">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="needsPrescription" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colPiecesNumber" text="Pieces Number">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="piecesNumber" />
+                     </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+
+            <Label text="Add a Drug:" />
+
+            <TextField fx:id="txtDrugId" promptText="Drug id" />
+            <TextField fx:id="txtDrugName" promptText="Drug Name" />
+            <TextField fx:id="txtProducer" promptText="Producer" />
+            <TextField fx:id="txtDrugPrice" promptText="Price" />
+            <TextField fx:id="txtNumberOfPieces" promptText="Pieces Number" />
+            <CheckBox fx:id="txtNeedsPrescription" text="Needs Prescription" />
+
+            <HBox alignment="CENTER" spacing="5">
+               <Button fx:id="btnAddDrug" onAction="#btnAddDrugClick" text="Add Drug" />
+               <Button fx:id="btnUpdateDrug" onAction="#btnUpdateDrugClick" text="Update Drug" />
+               <Button fx:id="btnDeleteSelectedDrug" onAction="#btnDeleteSelectedDrugClick" text="Delete selected drug" />
+            </HBox>
+            <!--      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>-->
+            <!--      <Button fx:id="helloButton" text="Say hi" onAction="#sayHi"/>-->
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox spacing="5">
+         <children>
+
+            <Label text="Current transactions:" />
+
+            <TableView fx:id="tblTransactions" editable="true">
+               <columns>
+                  <TableColumn fx:id="colIdTransaction" text="Id">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idEntity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colIdDrugTransaction" text="Drug id">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="idDrug" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colClientCard" text="Client card">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="cardNumberClient" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colDateAndHour" text="Date and hour">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="dateAndHour" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colNumberOfPieces" text="Number of pieces">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="soldPiecesNumber" />
+                     </cellValueFactory>
+                  </TableColumn>
+
+               </columns>
+            </TableView>
+
+            <Label text="Add a Transaction:" />
+
+            <TextField fx:id="txtTransactionId" promptText="Transaction id" />
+            <TextField fx:id="txtIdDrug" promptText="ID Drug" />
+            <TextField fx:id="txtClientCard" promptText="Client card" />
+            <TextField fx:id="txtDateAndHour" promptText="Date and hour" />
+            <TextField fx:id="txtSoldPiecesNumber" promptText="Number of pieces" />
+
+            <HBox alignment="CENTER" spacing="5">
+               <Button fx:id="btnAddTransaction" onAction="#btnAddTransactionClick" text="Add Transaction" />
+               <Button fx:id="btnUpdateTransaction" onAction="#btnUpdateTransactionClick" text="Update Transaction" />
+               <Button fx:id="btnDeleteSelectedTransaction" onAction="#btnDeleteSelectedTransactionClick" text="Delete selected transaction" />
+            </HBox>
+            <!--      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>-->
+            <!--      <Button fx:id="helloButton" text="Say hi" onAction="#sayHi"/>-->
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </HBox>
+   <VBox alignment="CENTER" spacing="10">
+    <TitledPane animated="false" prefHeight="500.0" prefWidth="865.0" text="Filters">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="18.0" text="Search drugs and transactions:" />
+                  <TextField fx:id="txtSearchText" layoutX="209.0" layoutY="14.0" promptText="Search text" />
+                  <Button fx:id="btnFullTextSearch" layoutX="368.0" layoutY="14.0" onAction="#btnFullTextSearchClick" text="Search" />
+                  <Label layoutX="29.0" layoutY="59.0" text="Search entries in interval:" />
+                  <TextField fx:id="txtDateHourStart" layoutX="27.0" layoutY="77.0" promptText="dd/mm/yyyy HH:mm" />
+                  <Label layoutX="187.0" layoutY="81.0" text="-" />
+                  <TextField fx:id="txtDateHourEnd" layoutX="199.0" layoutY="77.0" promptText="dd/mm/yyyy HH:mm" />
+                  <Button fx:id="btnTransactionDateHourSearch" layoutX="358.0" layoutY="77.0" onAction="#btnTransactionDateHourSearchClick" text="Search" />
+                  <Button fx:id="btnShowDrugsWithNumberOfTransactions" layoutX="29.0" layoutY="125.0" onAction="#btnShowDrugsWithNumberOfTransactionsClick" text="Show Drugs with number of transactions" />
+               
+                  <Button fx:id="btnUndo" layoutX="302.0" layoutY="125.0" onAction="#btnUndoClick" text="Undo" />
+                  <Button fx:id="btnRedo" layoutX="358.0" layoutY="125.0" onAction="#btnRedoClick" text="Redo" />
+               </children>
+            </AnchorPane>
+      </content>
+    </TitledPane>
+      <Accordion />
+   </VBox>
+  
+   <Accordion />
+
+</VBox>

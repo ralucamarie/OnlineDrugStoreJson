@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.DrugsWithNumberOfTransactions"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <TableView fx:id="tblDrugsWithTransactions" editable="true">
+        <columns>
+            <TableColumn fx:id="colIdDrug" text="Id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="idEntity" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colName" text="Drug Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="DrugName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colNumberOfTransactions" text="Number of transactions">
+                <cellValueFactory>
+                    <PropertyValueFactory property="salesNumber"  />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</VBox>
+
