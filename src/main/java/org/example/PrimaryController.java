@@ -61,6 +61,7 @@ public class PrimaryController {
     public TextField txtDrugPrice;
     public CheckBox txtNeedsPrescription;
     public TextField txtNumberOfPieces;
+    @FXML
     private TextField txtDateHourEnd;
 
 

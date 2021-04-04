@@ -25,7 +25,7 @@ public class Transaction extends Entity {
         return cardNumberClient;
     }
 
-    public int getPiecesNumber() {
+    public int getSoldPiecesNumber() {
         return soldPiecesNumber;
     }
 

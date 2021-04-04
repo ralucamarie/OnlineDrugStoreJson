@@ -85,7 +85,7 @@ public class TransactionService {
         for (Transaction transaction : this.getAll()) {
 
             if (Integer.toString(transaction.getIdEntity()).toLowerCase().contains(value) ||
-                    Integer.toString(transaction.getPiecesNumber()).contains(value) ||
+                    Integer.toString(transaction.getSoldPiecesNumber()).contains(value) ||
                     Integer.toString(transaction.getIdDrug()).contains(value) ||
                     Integer.toString(transaction.getCardNumberClient()).contains(value) ||
                     transaction.getDateAndHour().contains(value)) {

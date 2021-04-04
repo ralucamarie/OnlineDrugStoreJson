@@ -15,7 +15,7 @@ public class TransactionValidator {
         if (drug == null) {
             throw new Exception("There is no drug with given id!");
         }
-        else if (transaction.getPiecesNumber() >= drug.getPiecesNumber()) {
+        else if (transaction.getSoldPiecesNumber() >= drug.getPiecesNumber()) {
             throw new Exception("The given number of pieces transaction is greater or equal than number pieces of drug!");
         }
     }
